@@ -1,10 +1,10 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit(email, password)">
     <label> Email</label>
-    <input type="Email" required v-model="email" />
+    <input type="text" v-model="email" />
 
     <label> Password</label>
-    <input type="password" required v-model="password" />
+    <input type="password" v-model="password" />
 
     <label>Role:</label>
     <select v-model="role">
@@ -32,6 +32,9 @@
       <input type="checkbox" value="mario" v-model="names" />
       <label>Mario</label>
     </div>
+    <div class="submit">
+        <button>Create an account</button>
+    </div>
   </form>
   <p>Email: {{ email }}</p>
   <p>Password: {{ password }}</p>
@@ -52,6 +55,7 @@ export default {
       names: [],
       tempSkill: "",
       skills: [],
+      all:{email:'', pass:''}
     };
   },
   methods: {
@@ -68,6 +72,11 @@ export default {
         return skill !== item;
       });
     },
+    handleSubmit(email, password){
+        this.all.email = email;
+        this.all.pass = password;
+        console.log(this.all);
+    }
   },
 };
 </script>
@@ -117,5 +126,16 @@ input[type="checkbox"] {
   font-size: 15px;
   color: black;
   cursor: pointer;
+}
+button{
+    background: #0d6bff;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
+}
+.submit{
+    text-align: center;
 }
 </style>
