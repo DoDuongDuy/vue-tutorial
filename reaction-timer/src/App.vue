@@ -8,7 +8,7 @@
 
 <script>
 import Block from "./components/Block";
-import Results from "./components/Resutls"
+import Results from "./components/Resutls";
 export default {
   name: "App",
   components: { Block, Results },
@@ -22,7 +22,8 @@ export default {
   },
   methods: {
     start() {
-      (this.delay = 2000 + Math.random() * 5000), (this.isPlaying = true);
+      this.delay = 2000 + Math.random() * 5000;
+      this.isPlaying = true;
     },
     endGame(reactionTimer) {
       this.score = reactionTimer;
@@ -36,14 +37,14 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:  Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #444;
   margin-top: 60px;
 }
-button{
+button {
   background-color: #0faf87;
   color: white;
   border: none;
@@ -54,7 +55,7 @@ button{
   cursor: pointer;
   margin: 10px;
 }
-button[disabled]{
+button[disabled] {
   opacity: 0.2;
   cursor: not-allowed;
 }
