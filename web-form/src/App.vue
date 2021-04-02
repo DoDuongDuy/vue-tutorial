@@ -1,19 +1,19 @@
 <template>
-  <form >
+  <form>
     <SignupForm></SignupForm>
   </form>
 </template>
 
 <script>
-import SignupForm from "./components/SignupForm"
+import SignupForm from "./components/SignupForm";
 // import SignupForm from './components/SignupForm.vue'
 export default {
-  name: 'App',
-  components: { SignupForm }
-}
+  name: "App",
+  components: { SignupForm },
+};
 </script>
 
-<style>
+<style >
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,8 +22,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-body{
-  margin:0;
+body {
+  margin: 0;
   background: #eee;
 }
 </style>
