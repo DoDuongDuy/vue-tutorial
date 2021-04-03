@@ -1,23 +1,24 @@
 <template>
-<div class="post">
-  <h2> {{cpost.id}} ---> {{snipper}} </h2>
-</div>
+  <div class="post">
+    <router-link :to="{name : 'Details' , params: {id: cpost.id} }" >
+      <h2>{{ cpost.title }}</h2>
+    </router-link>
+    <p>{{ snippet }}</p>
+    <span v-for="tag in cpost.tags" :key="tag"> #{{ tag }} </span>
+  </div>
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core'
+import { computed } from "@vue/runtime-core";
 export default {
-    props:['cpost'],
-    setup(props) {
-        const snipper = computed(()=>{
-            return props.cpost.body.substring(0,3) + "....."
-        })
-        return {snipper}
-    }
-
-}
+  props: ["cpost"],
+  setup(props) {
+    const snippet = computed(() => {
+      return props.cpost.body.substring(0, 100) + ".....";
+    });
+    return { snippet };
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style lang="scss"></style>

@@ -13,7 +13,7 @@ export default {
     components:{SinglePost},
     props:['cposts'],
     setup(props) {
-        console.log(props.cposts)
+        // console.log(props.cposts)
     }
 }
 </script>
